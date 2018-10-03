@@ -3,6 +3,6 @@ node{
       echo "hello"
   }
   stage ("Get env") {
-      println env
+      echo sh(script: 'env|sort', returnStdout: true)
   }
 }
