@@ -8,22 +8,15 @@ node {
         withDockerServer([uri: 'tcp://docker-in-docker:2375']) {
 
 		stage('Testing') {
-	            parallel(
-	                    "Pre-integration Test" : {
 	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
-		       					sh 'mvn -f apps/helloworld-ws/pom.xml pre-integration-test'
+		       			sh 'mvn -f apps/helloworld-ws/pom.xml pre-integration-test'
 		   					 } 
 
-	                    },
-	                    "Integration Test" : {
-				sleep 10
-	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
+	                    	docker.image('maven:3.5-jdk-8-alpine').inside {
 		       			sh 'mvn -f apps/helloworld-ws/pom.xml integration-test'
 		   		}  
-	                    }
-	            )
-	        }
-    	}
+	          }
+    	   }
 
 	    stage ('Building'){
             	docker.image('maven:3.5-jdk-7-alpine').inside {
