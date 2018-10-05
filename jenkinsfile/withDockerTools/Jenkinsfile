@@ -1,7 +1,40 @@
 node {
+
+    stage ('Code checkout'){
+    	scm checkout
+    }
+
     docker.withTool('dockerTool'){
         withDockerServer([uri: 'tcp://docker-in-docker:2375']) {
-            docker.image('nginx').run()
-        }
-    }
+
+		stage('Testing') {
+	            parallel(
+	                    "Pre-integration Test" : {
+	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
+		       					sh 'mvn -f helloworld-ws/pom.xml pre-integration-test'
+		   					 } 
+
+	                    },
+	                    "Integration Test" : {
+	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
+		       					sh 'mvn -f helloworld-ws/pom.xml integration-test'
+		   					 }  
+	                    },
+	                    "Post-integration Test" : {
+	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
+	                            sh 'mvn -f helloworld-ws/pom.xml post-integration-test'
+	                        }
+	                    }
+	            )
+	        }
+    	}
+
+	    stage ('Building'){
+            	docker.image('maven:3.5-jdk-7-alpine').inside {
+                    sh 'mvn -f helloworld-ws/pom.xml install'
+                }
+	    }
+
+	}
+
 }
