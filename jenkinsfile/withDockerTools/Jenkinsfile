@@ -7,20 +7,14 @@ node {
     docker.withTool('dockerTool'){
         withDockerServer([uri: 'tcp://docker-in-docker:2375']) {
 	    stage('Testing') {
-		    
-		 docker.image('nginx').run()
-		    
-	         docker.image('mysql:5').withRun('-e "MYSQL_ROOT_PASSWORD=my-secret-pw" -p 3306:3306') { c ->
-			/* Wait until mysql service is up */
-			sh 'while ! mysqladmin ping -h0.0.0.0 --silent; do sleep 1; done'
-			/* Run some tests which require MySQL */
-			sh 'make check'
-		  }
 		    /* 
-	         docker.image('maven:3.5-jdk-7-alpine').inside {
+		 docker.image('nginx').run()
+		   */
+		 
+	         docker.image('maven:3.5-jdk-7-alpine').withRun() {
 		      sh 'mvn --version'
 		 } 
-		    
+		    /*
 	         docker.image('maven:3.5-jdk-7-alpine').inside {
 		      sh 'mvn -f apps/helloworld-ws/pom.xml pre-integration-test'
 		} 
