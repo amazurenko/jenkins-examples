@@ -14,11 +14,13 @@ node {
 	         docker.image('maven:3.5-jdk-8-alpine').inside {
 		      sh 'mvn -f apps/helloworld-ws/pom.xml integration-test'
 		}  
-	}
-        stage ('Building'){
-	    docker.image('maven:3.5-jdk-7-alpine').inside {
-	        sh 'mvn -f apps/pom.xml install'
 	    }
-        }
+		
+            stage ('Building'){
+	       docker.image('maven:3.5-jdk-7-alpine').inside {
+	          sh 'mvn -f apps/pom.xml install'
+	      }
+           }
+       }
     }
 }
