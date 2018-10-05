@@ -8,6 +8,10 @@ node {
         withDockerServer([uri: 'tcp://docker-in-docker:2375']) {
 	    stage('Testing') {
 	         docker.image('maven:3.5-jdk-7-alpine').inside {
+		      sh 'mvn --version'
+		 } 
+		    /* 
+	         docker.image('maven:3.5-jdk-7-alpine').inside {
 		      sh 'mvn -f apps/helloworld-ws/pom.xml pre-integration-test'
 		} 
 
@@ -21,6 +25,7 @@ node {
 	          sh 'mvn -f apps/pom.xml install'
 	      }
            }
+	   /*
        }
     }
 }
