@@ -11,18 +11,18 @@ node {
 	            parallel(
 	                    "Pre-integration Test" : {
 	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
-		       					sh 'mvn -f helloworld-ws/pom.xml pre-integration-test'
+		       					sh 'mvn -f apps/helloworld-ws/pom.xml pre-integration-test'
 		   					 } 
 
 	                    },
 	                    "Integration Test" : {
 	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
-		       					sh 'mvn -f helloworld-ws/pom.xml integration-test'
+		       					sh 'mvn -f apps/helloworld-ws/pom.xml integration-test'
 		   					 }  
 	                    },
 	                    "Post-integration Test" : {
 	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
-	                            sh 'mvn -f helloworld-ws/pom.xml post-integration-test'
+	                            sh 'mvn -f apps/helloworld-ws/pom.xml post-integration-test'
 	                        }
 	                    }
 	            )
@@ -31,7 +31,7 @@ node {
 
 	    stage ('Building'){
             	docker.image('maven:3.5-jdk-7-alpine').inside {
-                    sh 'mvn -f helloworld-ws/pom.xml install'
+                    sh 'mvn -f apps/helloworld-ws/pom.xml install'
                 }
 	    }
 
