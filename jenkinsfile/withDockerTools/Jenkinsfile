@@ -10,10 +10,11 @@ node {
 		    /* 
 		 docker.image('nginx').run()
 		   */
-	         docker.image('maven:3.5-jdk-7-alpine').run() {
+
+	         docker.image('maven:3.5-jdk-7-alpine').withRun() {
 		      sh 'mvn --version'
 		 } 
-	         docker.image('maven:3.5-jdk-7-alpine').withRun() {
+		 docker.image('maven:3.5-jdk-7-alpine').inside() {
 		      sh 'mvn --version'
 		 } 
 		    /*
