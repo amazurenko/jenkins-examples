@@ -1,40 +1,40 @@
 node {
-
+    deleteDir()
     stage ('Code checkout'){
-    	scm checkout
+    	checkout scm
     }
 
     docker.withTool('dockerTool'){
         withDockerServer([uri: 'tcp://docker-in-docker:2375']) {
+	    stage('Testing') {
+		    
+		 docker.image('nginx').run()
+		   /* 
 
-		stage('Testing') {
-	            parallel(
-	                    "Pre-integration Test" : {
-	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
-		       					sh 'mvn -f apps/helloworld-ws/pom.xml pre-integration-test'
-		   					 } 
+	         docker.image('maven:3.5-jdk-7-alpine').withRun() {
+		      sh 'mvn --version'
+		 } 
+		 */
+		 docker.image('maven:3.5-jdk-7-alpine').inside() {
+		      sh 'mvn --version'
+		 } 
+		    /*
+	         docker.image('maven:3.5-jdk-7-alpine').inside {
+		      sh 'mvn -f apps/helloworld-ws/pom.xml pre-integration-test'
+		} 
 
-	                    },
-	                    "Integration Test" : {
-	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
-		       					sh 'mvn -f apps/helloworld-ws/pom.xml integration-test'
-		   					 }  
-	                    },
-	                    "Post-integration Test" : {
-	                    	docker.image('maven:3.5-jdk-7-alpine').inside {
-	                            sh 'mvn -f apps/helloworld-ws/pom.xml post-integration-test'
-	                        }
-	                    }
-	            )
-	        }
-    	}
-
-	    stage ('Building'){
-            	docker.image('maven:3.5-jdk-7-alpine').inside {
-                    sh 'mvn -f apps/helloworld-ws/pom.xml install'
-                }
+	         docker.image('maven:3.5-jdk-8-alpine').inside {
+		      sh 'mvn -f apps/helloworld-ws/pom.xml integration-test'
+		} 
+		*/
 	    }
-
-	}
-
+		/*
+            stage ('Building'){
+	       docker.image('maven:3.5-jdk-7-alpine').inside {
+	          sh 'mvn -f apps/pom.xml install'
+	      }
+           }
+	   */
+       }
+    }
 }
