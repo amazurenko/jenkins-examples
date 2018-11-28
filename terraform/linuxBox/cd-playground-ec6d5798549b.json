@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cd-playground",
+  "private_key_id": "ec6d5798549b24e9ce71658e28640f574bf3aed8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4N3U0nkuIMlhy\nsb1St9Fb37UTNLje+MKOnWKzkB3moEKZlnKS2OsDj8puFrMq7CDPi5OwAVl72uEO\nVOZG69zjaxoLJ8gYcmqke/Y5ikl3oXHMQWJ4cg6qFoUEckqsXHyrXum5P6C0VHMG\n0rxpoIZx4cNHhKE5RRxeb3B+azwUVgh4x7f8vF3tCEcbUthSNw+nmYiPbdXbDpTh\nUhcvK8P0K99vVSarKNEAEvvwms5f2ETxOxs/aJlHuw0rWZYeg708F7rSgLKifJdQ\nMUrhaHGh8HnpWfplhDQDuCz5/XBkx0XXP1xm8A3MgZS+dPV/JCwFMfxTFVTf6fJV\nWPwGDzETAgMBAAECggEAOWqbntdZrm0WsUThv+boG40ZyI8tsd1x8nZufY4FK802\nhN1l/4wZj+Ygz3hGxrGLNnUIBpsdE2PwsoFWtrMsCTvoBaMUFD6RK4wxfdSyulU4\n/VNByE2wcWYMdorS6G75MoamLWV+BsathWpobDmqvdMChQd7Irj+MxbjxptQwftY\nFGWPCsmcE0Bjhn7D6RZfkHYPxYM6m6ZL7foh4Y1IAWXfz1dnV63HpH9mCebQ6ebR\nb4tCy+ywcoj5m/K1yKhYISdV6CorLOcGVB1nDRJe3NP98DZYFC+TYFUdeqoKYsXy\nOG+AP8Oi6hoVKLZMQ5IC5/bRBdSzYyrkFyMaNTg+lQKBgQD4iZWPQ8DpBgsuunPr\ngVlxckmNFUP+Ya8ubTSyFlFrPZSJtYgoechBvfUVwp+PenC5rXTAOiLQZFX+ad6d\n+ksFXSdgeuSxgb1brtNLAefgNQo8n2dskWr9nxEL7niiGTxGXFiwYkOzghHfhke/\n1cv/O3KLcyek1uxFUF9Blg6fLwKBgQC9v3aYSOGac76KdYic/yh3x1ejDTD3DUdq\n9kEG+uw2E6eOTvNAynNV/Ic650eg9+TEU/opYEd9o43P8uyc/7F66WEL6Y73UfXn\nc9OaymKydY4X43uG5cSIxAiKyvGO3Osnzj9NGSWcaRdq8MJjGcDeE5aCV/Bt+G6C\n2klc/UczXQKBgDCMn7yGna5nUdPk9DPy5of0rU1z8/5DErdc+cg399udAeEMpvZR\nI79D3hZMGGMspcx/h6jtMlPG5c123Ne7RuBbXA/KsdXC5Dx+oCOs0aDIe6Fv+gIJ\nPf8hDXFpOgNgLpgH/gMmjtcH93nUfzuIBftrn2qCKiJXIXxAwPrM1zpdAoGBAJtV\nqW3DhEUf6eWJkHwN+oAMBfdqbiJhkYzD6bogIs2mS24ZvdPVqJPE9qPHAIGLTpFW\nuh2zPvNguFB7ay6fuBiKA7Nv0WUwiKGg1aMLeb7ks51k0hQ99yWLbf7JYvT0b+IX\nWwTvyDWCZvRaApiEVbq3yGgOO7qbPUUMFDD2+5nVAoGAMSbao0Tn4vPq8kJdPfmV\nGAEIsGfVgZNpQT1noTPevRscNrcB7eOLq9yxfLO4HrkPnXlCpIn8TuFm0b9OxXwd\n7kETHq0CZn2mLCT9zbNe7juPRznOwprupgAfquhVe65I3jJ9MC3H5vE+f/6vClCF\nmNg3ZOMZ2gJjMiOwfaXqK84=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cd-playground-sa@cd-playground.iam.gserviceaccount.com",
+  "client_id": "108257329634345914708",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cd-playground-sa%40cd-playground.iam.gserviceaccount.com"
+}
